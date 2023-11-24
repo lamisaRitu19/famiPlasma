@@ -1,0 +1,35 @@
+.banner { 
+  position: relative; 
+  height: 85vh;
+  width: 100%;
+  background-image: url('../../assets/images/bannerImg.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  /* clip-path: polygon(0% 0%,
+    100% 0%,
+    100% 94%,
+    0% 100%); */
+  /* transition: all;
+  transition-timing-function: ease-in-out; */
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.45);
+  }
+}
+.swal2-styled {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.swal2-icon{
+  margin-top: 1em;
+}
+.swal2-title {
+  font-size: 1.25em;
+}
