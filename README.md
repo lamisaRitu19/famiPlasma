@@ -1,6 +1,6 @@
 # FamiPlasma Web App
 
-## Live link of the project is [FamiPlasma](http://localhost:3000/)
+## Live link of the project is [FamiPlasma](https://famiplasma-lami19.netlify.app/)
 
 To get you started you can simply clone the repository:
 
