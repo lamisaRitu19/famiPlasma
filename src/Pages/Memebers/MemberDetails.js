@@ -18,7 +18,7 @@ const MemberDetails = ({ handleShowDetails }) => {
         deleteGroup: id,
       };
       const response = await fetch(
-        `http://59.152.103.142:8013/users/groupDelete/${viewMemberDetail?.uid}`,
+        `https://famiplasma-server-lamisaritu.onrender.com/users/groupDelete/${viewMemberDetail?.uid}`,
         {
           method: "PUT",
           headers: {
@@ -35,7 +35,7 @@ const MemberDetails = ({ handleShowDetails }) => {
         deleteMember: viewMemberDetail?.uid,
       };
       const response2 = await fetch(
-        `http://59.152.103.142:8013/families/memberDelete/${id}`,
+        `https://famiplasma-server-lamisaritu.onrender.com/families/memberDelete/${id}`,
         {
           method: "PUT",
           headers: {

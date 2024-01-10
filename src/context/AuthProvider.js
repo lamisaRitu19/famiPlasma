@@ -90,7 +90,7 @@ const AuthProvider = ({ children }) => {
     try {
       // giving user id and invites list of this user, in familyGroups list of user, groups are added with ids in invites list
       const response = await fetch(
-        `http://59.152.103.142:8013/users/groupUpdateMany/${_uid}`,
+        `https://famiplasma-server-lamisaritu.onrender.com/users/groupUpdateMany/${_uid}`,
         {
           method: "PUT",
           headers: {
@@ -109,7 +109,7 @@ const AuthProvider = ({ children }) => {
     try {
       // giving user id and invites list of this user, user is added in members list of families containing ids in invites list
       const response = await fetch(
-        `http://59.152.103.142:8013/families/${_uid}`,
+        `https://famiplasma-server-lamisaritu.onrender.com/families/${_uid}`,
         {
           method: "PUT",
           headers: {
@@ -127,13 +127,16 @@ const AuthProvider = ({ children }) => {
   async function deleteInvites() {
     try {
       // deleting invite document from collection
-      const response = await fetch(`http://59.152.103.142:8013/invites`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userReceivedInvitations),
-      });
+      const response = await fetch(
+        `https://famiplasma-server-lamisaritu.onrender.com/invites`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userReceivedInvitations),
+        }
+      );
       const responseResult = await response.json();
       console.log("Successful deleted invitations", responseResult);
     } catch (err) {
@@ -150,7 +153,7 @@ const AuthProvider = ({ children }) => {
     try {
       const emain = _email.split("@")[0];
       const response = await fetch(
-        `http://59.152.103.142:8013/invites/${emain}`
+        `https://famiplasma-server-lamisaritu.onrender.com/invites/${emain}`
       );
       const responseResult = await response.json();
       console.log("Successful fetched requested invitations", responseResult);
@@ -164,7 +167,7 @@ const AuthProvider = ({ children }) => {
     try {
       // giving user id, families are fetched, filtered and listed if they have this user id
       const response = await fetch(
-        `http://59.152.103.142:8013/families/${userUid}`
+        `https://famiplasma-server-lamisaritu.onrender.com/families/${userUid}`
       );
       const responseResult = await response.json();
       console.log("Successful fetched family groups", responseResult);
@@ -178,7 +181,7 @@ const AuthProvider = ({ children }) => {
     try {
       // giving user id, families are listed if they have this user id then all the members from these families are fetched
       const response = await fetch(
-        `http://59.152.103.142:8013/users/allGroupsUsers/${userUid}`
+        `https://famiplasma-server-lamisaritu.onrender.com/users/allGroupsUsers/${userUid}`
       );
       const responseResult = await response.json();
       console.log(
@@ -199,7 +202,7 @@ const AuthProvider = ({ children }) => {
       try {
         // trying to login user and set in user state
         const response = await fetch(
-          `http://59.152.103.142:8013/users/${currentUser?.uid}`
+          `https://famiplasma-server-lamisaritu.onrender.com/users/${currentUser?.uid}`
         );
         const responseResult = await response.json();
         console.log("Successful login", responseResult);
@@ -238,13 +241,16 @@ const AuthProvider = ({ children }) => {
               diseases: [],
               familyGroups: [],
             };
-            const response = await fetch("http://59.152.103.142:8013/users", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(data),
-            });
+            const response = await fetch(
+              "https://famiplasma-server-lamisaritu.onrender.com/users",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+              }
+            );
             const responseResult = await response.json();
             Swal.fire({
               position: "bottom-end",

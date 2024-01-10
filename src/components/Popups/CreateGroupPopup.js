@@ -20,13 +20,16 @@ const CreateGroupPopup = ({ visible, onClose }) => {
         adminId: user?.uid,
         members: [user?.uid],
       };
-      const response = await fetch(`http://59.152.103.142:8013/families`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `https://famiplasma-server-lamisaritu.onrender.com/families`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       const responseResult = await response.json();
       console.log("Successfully created family", responseResult);
 
@@ -35,7 +38,7 @@ const CreateGroupPopup = ({ visible, onClose }) => {
         newGroup: responseResult.insertedId,
       };
       const response2 = await fetch(
-        `http://59.152.103.142:8013/users/groupUpdateOne/${user?.uid}`,
+        `https://famiplasma-server-lamisaritu.onrender.com/users/groupUpdateOne/${user?.uid}`,
         {
           method: "PUT",
           headers: {

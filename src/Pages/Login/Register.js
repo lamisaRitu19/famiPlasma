@@ -39,13 +39,16 @@ const Register = () => {
         diseases: [],
         familyGroups: [],
       };
-      const response = await fetch("http://59.152.103.142:8013/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://famiplasma-server-lamisaritu.onrender.com/users",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       const responseResult = await response.json();
       Swal.fire({
         position: "bottom-end",

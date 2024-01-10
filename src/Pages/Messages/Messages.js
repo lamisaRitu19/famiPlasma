@@ -8,7 +8,9 @@ const Messages = () => {
   const [messages, setMessages] = useState(null);
 
   useEffect(() => {
-    fetch(`http://59.152.103.142:8013/messages/${user?.uid}`)
+    fetch(
+      `https://famiplasma-server-lamisaritu.onrender.com/messages/${user?.uid}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setMessages(data);
@@ -50,13 +52,16 @@ const Messages = () => {
           timer: 1500,
         });
       } else {
-        const response = await fetch("http://59.152.103.142:8013/messages", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
+        const response = await fetch(
+          "https://famiplasma-server-lamisaritu.onrender.com/messages",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          }
+        );
         const responseResult = await response.json();
         console.log("Successful posted message", responseResult);
         Swal.fire({
@@ -79,13 +84,16 @@ const Messages = () => {
       const deleteData = {
         deleteId: _id,
       };
-      const response = await fetch(`http://59.152.103.142:8013/messages`, {
-        method: "Delete",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(deleteData),
-      });
+      const response = await fetch(
+        `https://famiplasma-server-lamisaritu.onrender.com/messages`,
+        {
+          method: "Delete",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(deleteData),
+        }
+      );
       const responseResult = await response.json();
       if (responseResult.deletedCount > 0) {
         console.log("Successfully deleted message", responseResult);

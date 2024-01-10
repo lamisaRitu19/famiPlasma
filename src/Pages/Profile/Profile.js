@@ -93,7 +93,7 @@ const Profile = () => {
       };
 
       const response = await fetch(
-        `http://59.152.103.142:8013/users/profile/${user?.uid}`,
+        `https://famiplasma-server-lamisaritu.onrender.com/users/profile/${user?.uid}`,
         {
           method: "PUT",
           headers: {

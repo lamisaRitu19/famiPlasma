@@ -2,12 +2,10 @@
 
 ## Live link of the project is [FamiPlasma](http://localhost:3000/)
 
-## Getting Started
-
 To get you started you can simply clone the repository:
 
 ```
-git clone https://github.com/Tectrioz1/Blood_Donation_Web
+git clone https://github.com/lamisaRitu19/famiPlasma.git
 ```
 
 Install the dependencies:

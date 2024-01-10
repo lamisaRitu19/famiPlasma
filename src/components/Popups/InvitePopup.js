@@ -39,13 +39,16 @@ const InvitePopup = ({ visible, onClose }) => {
         inviterId: user?.uid,
         toEmail: email,
       };
-      const response = await fetch(`http://59.152.103.142:8013/invites`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `https://famiplasma-server-lamisaritu.onrender.com/invites`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       const responseResult = await response.json();
       console.log("Successfully created invite document", responseResult);
       Swal.fire({

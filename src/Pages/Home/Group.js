@@ -14,7 +14,7 @@ const Group = ({ detail }) => {
     const eligibility = "";
 
     const response = await fetch(
-      `http://59.152.103.142:8013/users/filterGroupsUsers/${user?.uid}?famName=${famName}&bloodGroup=${bloodGroup}&eligibility=${eligibility}`
+      `https://famiplasma-server-lamisaritu.onrender.com/users/filterGroupsUsers/${user?.uid}?famName=${famName}&bloodGroup=${bloodGroup}&eligibility=${eligibility}`
     );
     const responseResult = await response.json();
     console.log(
